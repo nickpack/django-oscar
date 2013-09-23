@@ -61,11 +61,13 @@
             <tr><td>{% trans "No orders have been placed that use this voucher." %}</td></tr>
         {% else %}
             <thead>
-                <th>{% trans "Order number" %}</th>
-                <th>{% trans "Order total" %}</th>
-                <th>{% trans "Discount" %}</th>
-                <th>{% trans "Date placed" %}</th>
-                <th></th>
+                <tr>
+                    <th>{% trans "Order number" %}</th>
+                    <th>{% trans "Order total" %}</th>
+                    <th>{% trans "Discount" %}</th>
+                    <th>{% trans "Date placed" %}</th>
+                    <th>&nbsp;</th>
+                </tr>
             </thead>
             <tbody>
                 {% for discount in discounts %}

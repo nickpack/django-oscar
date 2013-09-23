@@ -37,7 +37,7 @@
 
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-		{% trans "or" %} <a href="{% url 'dashboard:promotion-list' %}">{% trans "cancel" %}</a>
+        {% trans "or" %} <a href="{% url 'dashboard:promotion-list' %}">{% trans "cancel" %}</a>
     </div>
 </form>
 
@@ -61,18 +61,20 @@
                 <td>{{ link.position }}</td>
                 <td>
                     <form action="." method="post" >
-					{% csrf_token %}
-					<input type="hidden" name="action" value="remove_from_page" />
-					<input type="hidden" name="pagepromotion_id" value="{{ link.id }}" />
-						<a href="{% url 'dashboard:promotion-list-by-url' link.page_url %}" class="btn btn-info">{% trans "View all blocks on this page" %}</a>
-						<button class="btn" type="submit">{% trans "Remove from page" %}</button>
-				</form>
-			</td>
-		</tr>
-		{% endfor %}
-	</tbody>
-	{% else %}
-	    <tr><td>{% trans "This promotion is not displayed anywhere at the moment." %}</td></tr>
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="remove_from_page" />
+                        <input type="hidden" name="pagepromotion_id" value="{{ link.id }}" />
+                        <a href="{% url 'dashboard:promotion-list-by-url' link.page_url %}" class="btn btn-info">{% trans "View all blocks on this page" %}</a>
+                        <button class="btn" type="submit">{% trans "Remove from page" %}</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    {% else %}
+        <tbody>
+            <tr><td>{% trans "This promotion is not displayed anywhere at the moment." %}</td></tr>
+        </tbody>
     {% endif %}
 </table>
 <div class="table-header">

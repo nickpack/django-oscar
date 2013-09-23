@@ -46,7 +46,7 @@
                         <dd class='bar-layer'>
                             <em>{{ item.end_time|date:"gA"|lower }}</em>
                             <span style="height: {{ item.percentage }}%;" >
-                                <p{% if item.percentage == 0 %} style="display: none;"{% endif %}>{{ item.total_incl_tax|currency }}</p>
+                                <p>{% if item.percentage == 0 %} style="display: none;"{% endif %}>{{ item.total_incl_tax|currency }}</p>
                             </span>
                         </dd>
                     {% endfor %}
@@ -61,7 +61,6 @@
     <div class="span4">
         <table class="table table-striped table-bordered table-hover">
             <caption><i class="icon-shopping-cart icon-large"></i>{% trans "Orders - Last 24 Hours" %}</caption>
-            </tr>
                 <tr>
                     <th class="span10">{% trans "Total orders" %}</th>
                         <td class="span2" >{{ total_orders_last_day }}</td>
@@ -83,7 +82,7 @@
     
     <div class="span4">
         <table class="table table-striped table-bordered table-hover">
-			<caption><i class="icon-shopping-cart icon-large"></i>{% trans "Orders - All Time" %}<a href="{% url 'dashboard:order-list' %}" class="btn pull-right"><i class="icon-shopping-cart icon-large"></i>{% trans "Manage" %}</a></caption>
+            <caption><i class="icon-shopping-cart icon-large"></i>{% trans "Orders - All Time" %}<a href="{% url 'dashboard:order-list' %}" class="btn pull-right"><i class="icon-shopping-cart icon-large"></i>{% trans "Manage" %}</a></caption>
             <tr>
                 <th class="span10">{% trans "Total orders" %}</th>
                     <td class="span2" >{{ total_orders }}</td>
@@ -162,7 +161,8 @@
                 <th class="span10">{% trans "Active" %} <em>{% trans "Vouchers" %}</em></th>
                 <td class="span2" >{{ total_vouchers }}</td>
             </tr>
-            <th class="span10">{% trans "Promotions" %}</th>
+            <tr>
+                <th class="span10">{% trans "Promotions" %}</th>
                 <td class="span2" >{{ total_promotions }}</td>
             </tr>
         </table>

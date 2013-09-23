@@ -1,7 +1,7 @@
 {% load url from future %}
 {% load i18n %}
 {% blocktrans with name=range.name %}
-<p>Range <strong>{{ name }}</strong> saved.</p>
+    <p>Range <strong>{{ name }}</strong> saved.</p>
 {% endblocktrans %}
 <p>
     <a href="{% url 'dashboard:range-update' range.pk %}" class="btn btn-success">{% trans "Edit again" %}</a>

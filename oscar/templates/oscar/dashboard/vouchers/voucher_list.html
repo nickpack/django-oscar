@@ -30,9 +30,9 @@
 </div>
 <div class="well">
     <form action="." method="get" class="form-inline">
-		{% include 'partials/form_fields_inline.html' with form=form %}
-		<button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
-		<a href="{% url 'dashboard:voucher-list' %}" class="btn">{% trans "Reset" %}</a>
+        {% include 'partials/form_fields_inline.html' with form=form %}
+        <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
+        <a href="{% url 'dashboard:voucher-list' %}" class="btn">{% trans "Reset" %}</a>
     </form>
 </div>
 
